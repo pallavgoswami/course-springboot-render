@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: myhiber
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: admin
+    ports:
+      - 8000:3306
+    volumes:
+      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
