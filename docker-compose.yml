@@ -4,7 +4,7 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      DATABASE_HOST: coursepedia_database
+      DATABASE_HOST: dpg-cttrrtbv2p9s738lhib0-a
       MYSQL_DATABASE: myhiber_w6im
       MYSQL_PASSWORD: admin
       MYSQL_ROOT_PASSWORD: admin
