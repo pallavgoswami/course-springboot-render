@@ -1,18 +1,14 @@
 version: '3.3'
 services:
   db:
-    image: mysql:5.7
+    image: postgres:latest
     restart: always
     environment:
-      DATABASE_HOST: spring-db
-      MYSQL_DATABASE: myhiber
-      MYSQL_PASSWORD: admin
-      MYSQL_ROOT_PASSWORD: admin
+      POSTGRES_DB: myhiber_w6im
+      POSTGRES_USER: myhiber_user
+      POSTGRES_PASSWORD: gyrINK0QUEXra8L8kgM5TFOq4hGzDhOl
     ports:
-      - 3307:3306
-    # volumes:
-    #   - ./data.sql:/docker-entrypoint-initdb.d/data.sql
-
+      - 5432:5432
   app:
     build:
       context: .
@@ -20,12 +16,8 @@ services:
     depends_on:
       - db
     ports:
-      - 9091:9091 
+      - 9091:9091
     environment:
-      # note the change in the following line
-      spring.datasource.url: jdbc:mysql://root:admin@host.docker.internal:3306/myhiber
-      spring.datasource.username: root
-      spring.datasource.password: admin
-
-
-      
+      SPRING_DATASOURCE_URL: jdbc:postgresql://dpg-cttrrtbv2p9s738lhib0-a.oregon-postgres.render.com/myhiber_w6im
+      SPRING_DATASOURCE_USERNAME: myhiber_user
+      SPRING_DATASOURCE_PASSWORD: gyrINK0QUEXra8L8kgM5TFOq4hGzDhOl
