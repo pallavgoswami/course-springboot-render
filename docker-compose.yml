@@ -5,7 +5,7 @@ services:
     restart: always
     environment:
       DATABASE_HOST: spring-db
-      MYSQL_DATABASE: myhiber
+      MYSQL_DATABASE: myhiber_w6im
       MYSQL_PASSWORD: admin
       MYSQL_ROOT_PASSWORD: admin
     ports:
